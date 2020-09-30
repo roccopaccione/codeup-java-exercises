@@ -19,9 +19,9 @@ public class ConsoleExercise {
         System.out.format("This is your sentence: %s", input);
         System.out.print("Enter The Length and Width of the Codeup classroom:\n");
         String userLength = sc.nextLine();
-        int userInt = new Integer(Integer.parseInt(userLength, sc.radix()));
+        int userInt = Integer.parseInt(userLength, sc.radix());
         String userWidth = sc.nextLine();
-        int widthInt = new Integer(Integer.parseInt(userWidth, sc.radix()));
+        int widthInt = Integer.parseInt(userWidth, sc.radix());
         int userPerimeter = (2 * widthInt) + (2 * userInt);
         int userArea = (userInt * widthInt);
         System.out.format("The perimeter is: %s\n", userPerimeter);
