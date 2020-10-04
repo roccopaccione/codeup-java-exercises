@@ -1,23 +1,23 @@
 public class MethodsExercise {
     public static void main (String[] args) {
-        addition(5, 10);
+        addInt(5, 10);
 
-        subtraction(25,32);
+        minusInt(65, 22);
 
-        multiplication(42, 20);
+        increaseBy(42, 20);
 
         division(225, 5);
 
     }
-    public static int addition (int one, int two) {
+    public static int addInt (int one, int two) {
         return one + two;
     }
 
-    public static int subtraction (int one, int two) {
-        return one - two;
+    public static int minusInt (int first, int second) {
+        return first - second;
     }
 
-    public static int multiplication (int one, int two) {
+    public static int increaseBy (int one, int two) {
         return one * two;
     }
 
