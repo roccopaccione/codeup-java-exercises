@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercise {
     public static void main (String[] args) {
 
@@ -30,5 +32,23 @@ public class MethodsExercise {
 
     public static int modNumBy (int one, int two) {
         return one % two;
+    }
+
+    // User Input Table
+
+    public static int getInteger (int min, int max) {
+
+        Scanner scan = new Scanner(System.in);
+        boolean isValid = true;
+
+        System.out.println("Enter a number.");
+        int userInput = scan.nextInt();
+        if (userInput <= 10 && userInput >= 0) {
+            System.out.println("Valid Integer");
+        } else {
+            System.out.println("Not a valid Integer!");
+        }
+
+
     }
 }
