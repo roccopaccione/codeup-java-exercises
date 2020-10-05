@@ -13,6 +13,12 @@ public class MethodsExercise {
 
         System.out.println(modNumBy(30, 3));
 
+//        System.out.println(getInteger(1, 10));
+//        System.out.println(getInteger(5, 9));
+
+        System.out.println(factorialTable());
+
+
     }
     public static int addInt (int one, int two) {
         return one + two;
@@ -34,21 +40,33 @@ public class MethodsExercise {
         return one % two;
     }
 
-    // User Input Table
+    // User Input Between two numbers
 
     public static int getInteger (int min, int max) {
 
         Scanner scan = new Scanner(System.in);
-        boolean isValid = true;
+        System.out.println("Enter a number between " + min + " and " + max);
+        int userInput = Integer.parseInt(scan.nextLine());
 
-        System.out.println("Enter a number.");
-        int userInput = scan.nextInt();
-        if (userInput <= 10 && userInput >= 0) {
-            System.out.println("Valid Integer");
-        } else {
-            System.out.println("Not a valid Integer!");
+        if (userInput < min) {
+            System.out.println("This number is lower than " + min);
+            return getInteger(min, max);
+        } else if ( userInput > max){
+            System.out.println("This number is larger than " + max);
+            return getInteger(min, max);
         }
 
+        return userInput;
+    }
 
+    // Factorial table
+
+    public static long factorialTable(){
+        int userInput = getInteger(1, 10);
+        long output = 1;
+        for (int counter = 1; counter <= userInput; counter++){
+            output *= counter;
+        }
+        return output;
     }
 }
