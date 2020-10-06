@@ -1,6 +1,10 @@
 public class Person {
     private String name;
 
+    public Person(String name) {
+        this.name = name;
+    }
+
     public String getName(){
 //TODO: return the person's name
         return this.name;
@@ -16,8 +20,6 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person rocco =new Person();
-        rocco.name = "Rocco Paccione";
+        Person rocco = new Person("Rocco");
     }
-
 }
