@@ -27,7 +27,7 @@ public class Input {
         return num;
     }
 
-    public int getInt(int min, int max){
+    public static int getInt(int min, int max){
         while (true) {
             System.out.printf("Please enter a number between %d and %d\n", min, max);
             String input = scanner.nextLine();
