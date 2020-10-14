@@ -40,13 +40,17 @@ public class GradesApplication {
             System.out.println(ghUsername+" ");
         }
 
-        System.out.println("What student would you like to see more information on?\n");
-        String username = input.getString();
-        if(students.containsKey(username)){
-            System.out.printf("Name: %s - GitHub Username: %s\n" +
-                    "Current Average: %f\n", students.get(username).getName(), username, students.get(username).getGradeAverage());
-        } else {
-            System.err.printf("Sorry, no student found with the GitHub username of %s.", username);
-        }
+        do{
+            System.out.println("What student would you like to see more information on?\n");
+            String username = input.getString();
+            if(students.containsKey(username)){
+                System.out.printf("Name: %s - GitHub Username: %s\n" +
+                        "Current Average: %f\n", students.get(username).getName(), username, students.get(username).getGradeAverage());
+            } else {
+                System.err.printf("Sorry, no student found with the GitHub username of %s.", username);
+            }
+        } while (input.yesNo("Would you like to see another student Y/N ?"));
+
+        System.out.println("Goodbye, Have a wonderful day!");
     }
 }

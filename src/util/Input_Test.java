@@ -5,7 +5,7 @@ public class Input_Test {
         Input input = new Input();
 
 
-        if (input.yesNo())
+        if (input.yesNo("Would you like to see another student Y/N ?"))
         {
             System.out.println("This returned true");
         }else{
