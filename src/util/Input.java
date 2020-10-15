@@ -6,25 +6,36 @@ public class Input {
     private static Scanner scanner;
 
     public Input(){
-        this.scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 
     }
 
     public String getString(){
-        return this.scanner.nextLine();
+        return scanner.nextLine();
     }
 
     public boolean yesNo(){
         System.out.println("Please enter yes or no");
-        String input = this.scanner.nextLine();
+        String input = scanner.nextLine();
       return (input.trim().toLowerCase().equals("y") || (input.trim().toLowerCase().equals("yes")));
     }
 
     public int getInt(){
-        System.out.println("Please enter an integer");
-        String input = scanner.nextLine();
-        int num = Integer.parseInt(input);
-        return num;
+        try{
+            System.out.println("Please enter an integer");
+            String num = getString();
+            Integer integ = Integer.valueOf(num);
+            return integ;
+        } catch (NumberFormatException nfe) {
+        System.out.println("NumberFormatException");
+        System.out.println("nfe");
+    } catch (NullPointerException npe) {
+        System.out.println("NullPointerException");
+        System.out.println("npe");
+    }finally{
+        System.out.println("okay");
+    }
+       return getInt();
     }
 
     public static int getInt(int min, int max){
@@ -37,12 +48,26 @@ public class Input {
         }
     }
 
-    public double getDouble(){
-        System.out.println("Please enter an number");
-        String input = scanner.nextLine();
-        double num = Double.parseDouble(input);
-        return num;
-    }
+
+        public double getDouble() {
+            try {
+                System.out.println("Please enter an number");
+                String input = getString();
+                double dub = Double.valueOf(input);
+                return dub;
+            } catch (NumberFormatException nfe) {
+                System.out.println("NumberFormatException");
+                System.out.println("nfe");
+            } catch (NullPointerException npe) {
+                System.out.println("NullPointerException");
+                System.out.println("npe");
+            }finally{
+                System.out.println("okay");
+            }
+            return getDouble();
+        }
+
+
 
     public double getDouble(double min, double max){
         while (true) {
