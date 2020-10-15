@@ -12,8 +12,9 @@ public class Input_Test {
             System.out.println("It says false");
         }
 
-        System.out.println(input.getInt(255, 300));
+        System.out.println(input.getInt());
 
-        System.out.println(input.getDouble(255, 300));
+        System.out.println(input.getDouble());
+
     }
 }
